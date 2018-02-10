@@ -1,0 +1,86 @@
+a{
+    text-decoration: none;
+}
+a:link {
+    color: cornflowerblue;
+}
+
+a:visited {
+    color: cornflowerblue;
+}
+
+a:hover {
+    color:cornflowerblue
+}
+
+a:active {
+    color: cornflowerblue;
+}
+
+input[type="button"] {
+    margin-right: 15px;
+}
+
+.naviagation ul li {
+    float:left;
+}
+
+.form {
+    width: 300px;
+    margin:10px;
+}
+
+.form-group {
+    height: 50px;
+}
+
+.form-group label{
+    float:left;
+}
+
+.form-group input, .form-group select {
+    float:right;
+}
+
+.form-group select {
+    width:160px;
+}
+
+.form-buttons {
+    float:left;
+}
+
+.form-buttons input {
+    margin-right: 20px;
+}
+
+.errors {
+    width: 300px;
+    padding:10px;
+    background: 1px solid red;
+    background-color: lightcoral;
+    margin:10px;
+}
+
+.auction-table {
+    width: 80%;
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+    margin: 10px;
+}
+.auction-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.auction-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
