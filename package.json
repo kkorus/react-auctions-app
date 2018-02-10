@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "npm run build-wp && npm run start-server",
+        "start": "npm install && npm run build-wp && npm run start-server",
         "start-server": "node index.js",
         "serve": "nodemon index.js",
         "build-wp": "webpack --config webpack.config.js --display-error-details --colors"
