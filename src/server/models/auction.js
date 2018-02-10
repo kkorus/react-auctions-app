@@ -5,7 +5,7 @@ var AuctionSchema = new mongoose.Schema({
         type: String,
         require: true,
         trim: true,
-        minlength: 1,
+        minlength: 10,
         unique: false
     },
     category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },

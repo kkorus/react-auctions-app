@@ -74,7 +74,6 @@ function registerAuctionsController(server) {
     // creates new auction
     server.post('/api/auctions', authenticate, async (req, res) => {
         try {
-            console.log(req.body);
             const body = _.pick(req.body, ['desc', 'category', 'province', 'user']);
             const auction = new Auction(body);
             await auction.save();
@@ -116,7 +115,6 @@ function registerAuctionsController(server) {
             const auction = await Auction.findOneAndUpdate(
                 {
                     _id: id
-                    // _creator: req.user._id
                 },
                 {
                     $set: body
