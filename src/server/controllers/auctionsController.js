@@ -5,6 +5,30 @@ const { Category } = require('../models/category');
 const { Province } = require('../models/province');
 const { authenticate } = require('../middleware/authenticate');
 
+function validateAuction(req, res, next) {
+    const errors = [];
+    const body = _.pick(req.body, ['desc', 'category', 'province']);
+    const { desc, category, province } = body
+
+    if (!desc || desc.lentgh < 10) {
+        errors.push('Opis musi byc dluzysz niz 10 znakow');
+    }
+
+    if (ObjectID.isValid(category)) {
+        errors.push('Brakujace pole - kategoria');
+    }
+
+    if (ObjectID.isValid(province)) {
+        errors.push('Brakujace pole - wojewodztwo');
+    }
+
+    if (errors.length > 0) {
+        return res.status(400).send({ errors });
+    }
+
+    next();
+}
+
 function registerAuctionsController(server) {
     // returns list of auction categories
     server.get('/api/categories', authenticate, async (req, res) => {
@@ -72,7 +96,7 @@ function registerAuctionsController(server) {
     });
 
     // creates new auction
-    server.post('/api/auctions', authenticate, async (req, res) => {
+    server.post('/api/auctions', authenticate, validateAuction, async (req, res) => {
         try {
             const body = _.pick(req.body, ['desc', 'category', 'province', 'user']);
             const auction = new Auction(body);
@@ -103,7 +127,7 @@ function registerAuctionsController(server) {
     });
 
     // updates auction
-    server.patch('/api/auctions/:id', authenticate, async (req, res) => {
+    server.patch('/api/auctions/:id', authenticate, validateAuction, async (req, res) => {
         try {
             const id = req.params.id;
             const body = _.pick(req.body, ['desc', 'category', 'province']);

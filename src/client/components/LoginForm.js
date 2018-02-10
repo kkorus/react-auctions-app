@@ -29,7 +29,6 @@ class LoginForm extends React.Component {
 
         let self = this;
 
-        console.log(this.state.login);
         axios.post('/api/users/login', {
             name: this.state.login.name,
             password: this.state.login.password
