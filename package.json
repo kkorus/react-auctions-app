@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "npm install && npm run build-wp && npm run start-server",
+        "start": "npm run build-wp && npm run start-server",
         "start-server": "node index.js",
         "serve": "nodemon index.js",
         "build-wp": "webpack --config webpack.config.js --display-error-details --colors"
@@ -24,9 +24,7 @@
         "react": "^16.2.0",
         "react-bootstrap": "^0.32.0",
         "react-dom": "^16.2.0",
-        "react-router-dom": "^4.2.2"
-    },
-    "devDependencies": {
+        "react-router-dom": "^4.2.2",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
@@ -38,5 +36,6 @@
         "babel-register": "^6.26.0",
         "react-test-renderer": "^16.2.0",
         "webpack": "^3.10.0"
-    }
+    },
+    "devDependencies": {}
 }
