@@ -18,7 +18,6 @@ var userValidationMiddleware = function (req, res, next) {
         return res.status(400).send({ errors });
     }
 
-    console.log('ehre');
     next();
 };
 
@@ -45,6 +44,7 @@ function registerUsersController(server) {
             const token = await user.generateAuthToken();
             res.header('x-auth', token).send(user);
         } catch (e) {
+            console.log(e);
             res.sendStatus(400);
         }
     });
