@@ -26,7 +26,11 @@ class EditAuctionForm extends React.Component {
         const responseProvinces = await axios.get('/api/provinces', { headers: { 'x-auth': getAuthKey() } })
 
         this.setState({
-            auction: { ...responseAuction.data.auction },
+            auction: {
+                desc: responseAuction.data.auction.desc,
+                category: responseAuction.data.auction.category._id,
+                province: responseAuction.data.auction.province._id,
+            },
             categories: responseCategories.data.categories,
             provinces: responseProvinces.data.provinces
         });
