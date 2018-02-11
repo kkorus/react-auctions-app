@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var AuctionSchema = new mongoose.Schema({
+const AuctionSchema = new mongoose.Schema({
     desc: {
         type: String,
         require: true,
@@ -13,6 +13,6 @@ var AuctionSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
-var Auction = mongoose.model('Auction', AuctionSchema);
+const Auction = mongoose.model('Auction', AuctionSchema);
 
 module.exports = { Auction };

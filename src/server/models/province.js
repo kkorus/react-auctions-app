@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var ProvinceSchema = new mongoose.Schema({
+const ProvinceSchema = new mongoose.Schema({
     name: {
         type: String,
         require: true,
@@ -10,6 +10,6 @@ var ProvinceSchema = new mongoose.Schema({
     }
 });
 
-var Province = mongoose.model('Province', ProvinceSchema);
+const Province = mongoose.model('Province', ProvinceSchema);
 
 module.exports = { Province };
