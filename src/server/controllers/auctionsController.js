@@ -14,11 +14,11 @@ function validateAuction(req, res, next) {
         errors.push('Opis musi byc dluzysz niz 10 znakow');
     }
 
-    if (ObjectID.isValid(category)) {
+    if (!ObjectID.isValid(category)) {
         errors.push('Brakujace pole - kategoria');
     }
 
-    if (ObjectID.isValid(province)) {
+    if (!ObjectID.isValid(province)) {
         errors.push('Brakujace pole - wojewodztwo');
     }
 
