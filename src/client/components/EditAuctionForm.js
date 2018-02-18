@@ -44,7 +44,6 @@ class EditAuctionForm extends React.Component {
         });
     };
 
-
     onSubmit = () => {
         if (!this.isFormValid()) return;
 
